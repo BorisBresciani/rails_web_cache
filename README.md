@@ -2,6 +2,7 @@
 
 [![Gem Version](https://badge.fury.io/rb/rails_web_cache.svg)](https://badge.fury.io/rb/rails_web_cache)
 [![Maintainability](https://api.codeclimate.com/v1/badges/5c8cfdc538a5230ab7d8/maintainability)](https://codeclimate.com/github/BorisBresciani/rails_web_cache/maintainability)
+[![Build Status](https://travis-ci.org/BorisBresciani/rails_web_cache.svg?branch=master)](https://travis-ci.org/BorisBresciani/rails_web_cache)
 [![security](https://hakiri.io/github/BorisBresciani/rails_web_cache/master.svg)](https://hakiri.io/github/BorisBresciani/rails_web_cache/master)
 ![Gem](https://img.shields.io/gem/dt/rails_web_cache)
 [![Coverage Status](https://coveralls.io/repos/github/BorisBresciani/rails_web_cache/badge.svg?branch=master)](https://coveralls.io/github/BorisBresciani/rails_web_cache?branch=master)
