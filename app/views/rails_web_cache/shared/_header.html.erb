@@ -1,0 +1,17 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <%= link_to 'Rails Web Cache', root_path, title: 'Rails Web Cache', class: 'navbar-brand' %>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Rails Web Cache">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <%= link_to keys_path, title: 'View keys', class: 'nav-link' do %>
+            Keys <span class="badge badge-info badge-pill"><%= RailsWebCache.cache.keys_size %></span>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

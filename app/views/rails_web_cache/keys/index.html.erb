@@ -1,0 +1,95 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-12">
+      <%= form_tag(root_path, method: :get, class: 'mb-4') do %>
+        <div class="input-group">
+          <%= text_field_tag :query, params[:query], class: 'form-control', placeholder: 'Search key(s)' %>
+          <div class="input-group-append">
+            <%= submit_tag 'Search', class: 'btn btn-primary', name: nil %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <%= form_tag(destroy_all_keys_path, method: :delete) do %>
+        <div class="table-responsive">
+          <table class="table table-striped table-bordered">
+            <thead>
+            <tr>
+              <th>
+                <%= label_tag 'select-all-keys', 'Select all keys', class: 'd-none' %>
+                <%= check_box_tag 'select-all-keys', nil %>
+              </th>
+              <th>Key</th>
+              <th>Value</th>
+              <th>Expires at</th>
+              <th>Size</th>
+              <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% @keys.each do |key| %>
+              <tr>
+                <td class="align-middle">
+                  <%= check_box_key(key[:key], key[:id]) %>
+                </td>
+                <td class="align-middle">
+                  <%= truncate(key[:key], length: 40) %>
+                </td>
+                <td class="align-middle">
+                  <%= truncate(key[:value], length: 40) %>
+                </td>
+                <td class="align-middle">
+                  <%= expired_at(key[:expires_at]) %>
+                </td>
+                <td class="align-middle text-center">
+                  <%= number_to_human_size(key[:size]) %>
+                </td>
+                <td class="align-middle">
+                  <div class="d-flex flex-row">
+                    <%= link_to 'Show', key_path(key[:key]), title: "Show #{key[:key]}", class: 'btn btn-sm btn-primary w-100' %>
+                    <%= link_to 'Delete', key_path(key[:key]), method: :delete, data: {confirm: 'Are you sure ?'}, title: "Delete #{key[:key]}", class: 'btn btn-sm btn-danger w-100 ml-2' %>
+                  </div>
+                </td>
+              </tr>
+            <% end %>
+            </tbody>
+          </table>
+        </div>
+        <%= submit_tag 'Delete selected keys', class: 'btn btn-danger w-100 mb-4 disabled', id: 'delete-all-keys' %>
+      <% end %>
+    </div>
+    <div class="col-12">
+      <div class="d-flex justify-content-center">
+        <nav aria-label="Rails Web Cache">
+          <ul class="pagination">
+            <li class="page-item <%= @page <= 1 ? 'disabled' : '' %>">
+              <%= link_to 'Previous', root_path(params.merge(page: @page - 1 <= 0 ? 1 : @page - 1).permit(:query, :page)), title: "Pages - #{@page - 1 <= 0 ? 1 : @page - 1}", class: 'page-link' %>
+            </li>
+            <% if @pages > 2 %>
+              <li class="page-item">
+                <%= link_to (@pages - @pages) + 1, root_path(params.merge(page: 1).permit(:query, :page)), title: "Pages - #{(@pages - @pages) + 1}", class: 'page-link' %>
+              </li>
+              <% if @page > 2 %>
+                <li class="page-item">
+                  <%= link_to @page - 1, root_path(params.merge(page: @page - 1).permit(:query, :page)), title: "Pages - #{@page - 1}", class: 'page-link' %>
+                </li>
+              <% end %>
+              <li class="page-item">
+                <%= link_to @page + 1, root_path(params.merge(page: @page + 1).permit(:query, :page)), title: "Pages - #{@page + 1}", class: 'page-link' %>
+              </li>
+              <li class="page-item">
+                <%= link_to @pages - 1, root_path(params.merge(page: @pages - 1).permit(:query, :page)), title: "Pages - #{@pages - 1}", class: 'page-link' %>
+              </li>
+            <% end %>
+            <li class="page-item <%= @page >= @pages ? 'disabled' : '' %>">
+              <%= link_to 'Next', root_path(params.merge(page: @page + 1 > @pages ? @pages : @page + 1).permit(:query, :page)), title: "Pages - #{@page + 1 > @pages ? @pages : @page + 1}", class: 'page-link' %>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>

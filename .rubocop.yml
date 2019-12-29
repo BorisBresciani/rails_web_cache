@@ -1,0 +1,11 @@
+Documentation:
+  Enabled: false
+Metrics/LineLength:
+  IgnoredPatterns: ['(\A|\s)#']
+  Max: 100
+Layout/EmptyLineAfterGuardClause:
+  Enabled: false
+Layout/EmptyLinesAroundBlockBody:
+  Enabled: false
+Metrics/BlockLength:
+  Max: 35

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+      Rails web cache
+    </title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag 'rails_web_cache/application', media: 'all' %>
+    <%= javascript_include_tag 'rails_web_cache/application' %>
+  </head>
+  <body>
+    <%= render partial: 'rails_web_cache/shared/header' %>
+    <%= yield %>
+  </body>
+</html>
