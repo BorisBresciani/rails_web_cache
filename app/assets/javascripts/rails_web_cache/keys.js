@@ -1,6 +1,6 @@
 $(document).ready(function() {
     $('#select-all-keys').on('click', function() {
-        const checked = $(this).is(':checked');
+        var checked = $(this).is(':checked');
         if (checked) {
             $('#delete-all-keys').removeClass('disabled');
         } else {
@@ -11,8 +11,8 @@ $(document).ready(function() {
         });
     });
     $("input[name='keys[]'").on('click', function() {
-        const checked = $("input:checked[name='keys[]']");
-        const size = checked.length;
+        var checked = $("input:checked[name='keys[]']");
+        var size = checked.length;
         if (size > 0) {
             $('#delete-all-keys').removeClass('disabled');
         } else {
