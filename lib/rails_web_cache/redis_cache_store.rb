@@ -16,7 +16,7 @@ module RailsWebCache
 
     def entry(key, options = {})
       return nil unless key
-      return nil if type(key) == 'zset'
+      return nil unless type(key) == 'string'
       entry = read_entry(key, options)
       return nil unless entry
       RailsWebCache::Entry.new(entry)
