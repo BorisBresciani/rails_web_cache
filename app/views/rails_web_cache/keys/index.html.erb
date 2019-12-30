@@ -32,13 +32,13 @@
             <tbody>
             <% @keys.each do |key| %>
               <tr>
-                <td class="align-middle">
+                <td class="align-middle width-check-box">
                   <%= check_box_key(key[:key], key[:id]) %>
                 </td>
-                <td class="align-middle width">
+                <td class="align-middle width-key-value">
                   <span class="truncate"><%= key[:key] %></span>
                 </td>
-                <td class="align-middle width">
+                <td class="align-middle width-key-value">
                   <span class="truncate"><%= key[:value] %></span>
                 </td>
                 <td class="align-middle">

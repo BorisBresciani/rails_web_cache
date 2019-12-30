@@ -1,10 +1,15 @@
-.width {
-    width: 220px;
+.width-check-box {
+    width: 20px;
+}
+
+.width-key-value {
+    width: 240px;
 }
 
 .truncate {
-    width: 220px;
+    width: 240px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    display: block;
 }
