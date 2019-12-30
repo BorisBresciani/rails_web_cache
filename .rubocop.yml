@@ -9,3 +9,5 @@ Layout/EmptyLinesAroundBlockBody:
   Enabled: false
 Metrics/BlockLength:
   Max: 35
+Style/DoubleNegation:
+  Enabled: false

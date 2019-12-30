@@ -28,18 +28,18 @@ module RailsWebCache
     end
 
     def redis_cache_store?(driver)
-      defined?(::Redis) &&
-        defined?(::ActiveSupport::Cache::RedisCacheStore) &&
+      !!defined?(::Redis) &&
+        !!defined?(::ActiveSupport::Cache::RedisCacheStore) &&
         driver.is_a?(::ActiveSupport::Cache::RedisCacheStore)
     end
 
     def memory_store?(driver)
-      defined?(::ActiveSupport::Cache::MemoryStore) &&
+      !!defined?(::ActiveSupport::Cache::MemoryStore) &&
         driver.is_a?(::ActiveSupport::Cache::MemoryStore)
     end
 
     def file_store?(driver)
-      defined?(::ActiveSupport::Cache::FileStore) &&
+      !!defined?(::ActiveSupport::Cache::FileStore) &&
         driver.is_a?(::ActiveSupport::Cache::FileStore)
     end
   end

@@ -7,7 +7,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <%= link_to keys_path, title: 'View keys', class: 'nav-link' do %>
+          <%= link_to root_path, title: 'View keys', class: 'nav-link' do %>
             Keys <span class="badge badge-info badge-pill"><%= RailsWebCache.cache.keys_size %></span>
           <% end %>
         </li>

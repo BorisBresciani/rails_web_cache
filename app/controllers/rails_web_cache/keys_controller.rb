@@ -18,20 +18,23 @@ module RailsWebCache
 
     # GET /keys/:key
     def show
+      redirect_to root_path if @key.nil?
       @value = cache.read(@key)
       @entry = cache.entry(@key)
     end
 
     # DELETE /keys/:key
     def destroy
+      redirect_to root_path if @key.nil?
       cache.delete(@key)
       redirect_to root_path
     end
 
     # DELETE /keys/all/:keys
     def destroy_all
-      keys = params[:keys].presence || []
-      keys.each do |key|
+      keys = params[:keys].presence
+      redirect_to root_path if keys.nil?
+      (keys || []).each do |key|
         cache.delete(key)
       end
       redirect_to root_path
