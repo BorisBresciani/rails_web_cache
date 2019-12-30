@@ -25,9 +25,9 @@ module RailsWebCache
     end
 
     def entry(key, options = {})
-      return nil unless key
+      return unless key
       entry = read_entry(key, options)
-      return nil unless entry
+      return unless entry
       RailsWebCache::Entry.new(entry)
     end
 

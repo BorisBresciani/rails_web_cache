@@ -10,15 +10,20 @@ module RailsWebCache
       redis.keys
     end
 
+    def read(key)
+      return unless type(key) == 'string'
+      cache.read(key) if key
+    end
+
     def search(query = '')
       redis.scan_each(match: "*#{query.downcase}*").to_a if query
     end
 
     def entry(key, options = {})
-      return nil unless key
-      return nil unless type(key) == 'string'
+      return unless key
+      return unless type(key) == 'string'
       entry = read_entry(key, options)
-      return nil unless entry
+      return unless entry
       RailsWebCache::Entry.new(entry)
     end
 
