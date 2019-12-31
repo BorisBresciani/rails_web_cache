@@ -7,7 +7,7 @@
 ![Gem](https://img.shields.io/gem/dt/rails_web_cache)
 [![Coverage Status](https://coveralls.io/repos/github/BorisBresciani/rails_web_cache/badge.svg?branch=master)](https://coveralls.io/github/BorisBresciani/rails_web_cache?branch=master)
 
-RailsParseHead is a simple Ruby/Rails library for manage Rails cache by Web UI (Redis, Memory, etc...)
+RailsWebCache is a simple Ruby/Rails library for manage Rails cache by Web UI (Redis, Memory, etc...)
 
 ## Installation
 
@@ -44,4 +44,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the RailsParseHead project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/BorisBresciani/rails_web_cache/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the RailsWebCache project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/BorisBresciani/rails_web_cache/blob/master/CODE_OF_CONDUCT.md).
