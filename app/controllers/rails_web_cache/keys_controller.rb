@@ -11,7 +11,8 @@ module RailsWebCache
     def index
       @keys = keys
       @pages = (@keys.size / @per_page.to_f).ceil
-      @keys = (@keys[@offset, @per_page] || []).map.with_index do |key, idx|
+      @keys = @keys[@offset, @per_page] || []
+      @keys = @keys.map.with_index do |key, idx|
         format_key(key, idx)
       end
     end
@@ -32,9 +33,9 @@ module RailsWebCache
 
     # DELETE /keys/all/:keys
     def destroy_all
-      keys = params[:keys].presence
-      redirect_to root_path if keys.nil?
-      (keys || []).each do |key|
+      keys = params[:keys].presence || []
+      redirect_to root_path if keys.nil? || keys.empty?
+      keys.each do |key|
         cache.delete(key)
       end
       redirect_to root_path

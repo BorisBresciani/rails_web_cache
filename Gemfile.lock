@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    rails_web_cache (0.7.0)
+    rails_web_cache (0.7.2)
       rails (>= 5.2, < 7.0)
 
 GEM
