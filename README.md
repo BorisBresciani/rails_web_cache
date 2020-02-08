@@ -34,6 +34,11 @@ Add this line to the file `config/routes.rb`
 
 Enjoy ! Go to `/rails_web_cache`
 
+## Extra
+
+https://github.com/OpenGems/redis_web_manager
+
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/BorisBresciani/rails_web_cache. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
