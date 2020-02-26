@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    rails_web_cache (0.7.3)
+    rails_web_cache (0.7.4)
       rails (>= 5.2, < 7.0)
 
 GEM
@@ -63,7 +63,7 @@ GEM
       tzinfo (~> 1.1)
       zeitwerk (~> 2.2)
     builder (3.2.4)
-    concurrent-ruby (1.1.5)
+    concurrent-ruby (1.1.6)
     coveralls (0.8.23)
       json (>= 1.8, < 3)
       simplecov (~> 0.16.1)
@@ -92,9 +92,9 @@ GEM
     mini_portile2 (2.4.0)
     minitest (5.14.0)
     nio4r (2.5.2)
-    nokogiri (1.10.7)
+    nokogiri (1.10.8)
       mini_portile2 (~> 2.4.0)
-    rack (2.1.2)
+    rack (2.2.2)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rails (6.0.2.1)
@@ -158,7 +158,7 @@ GEM
       tins (~> 1.0)
     thor (1.0.1)
     thread_safe (0.3.6)
-    tins (1.24.0)
+    tins (1.24.1)
       sync
     tzinfo (1.2.6)
       thread_safe (~> 0.1)
