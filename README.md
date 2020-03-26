@@ -9,6 +9,10 @@
 
 RailsWebCache is a simple Ruby/Rails library for manage Rails cache by Web UI (Redis, Memory, etc...)
 
+## Extra
+
+https://github.com/OpenGems/redis_web_manager
+
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -33,10 +37,6 @@ Add this line to the file `config/routes.rb`
 ```
 
 Enjoy ! Go to `/rails_web_cache`
-
-## Extra
-
-https://github.com/OpenGems/redis_web_manager
 
 
 ## Contributing
